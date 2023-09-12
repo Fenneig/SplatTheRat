@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &47249069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47249071}
+  - component: {fileID: 47249070}
+  m_Layer: 0
+  m_Name: RatGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &47249070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47249069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e373a5c415d4c7db04cf8e7d285ac2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ratPrefab: {fileID: 6278870042507198203, guid: 400d363368cc17a458e0e35a284e095f, type: 3}
+  _field: {fileID: 11400000, guid: 0d289da4fce3e5b44a703dbf9602eb6f, type: 2}
+  _ratDefinitions:
+  - {fileID: 11400000, guid: 3945f8dc0c5829146a7b6b010703fdd6, type: 2}
+  - {fileID: 11400000, guid: 55d49e4f632571e469f87563da5995ad, type: 2}
+  - {fileID: 11400000, guid: 50c5e0609e698514bb79d49b528a18fb, type: 2}
+--- !u!4 &47249071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47249069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &314486176
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,8 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f777ed94357c64e986fe4c097ad1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fieldPartPrefab: {fileID: 6435740227697899986, guid: 38411b331ffe4fe48957523fcf4a7abd, type: 3}
-  _gridLength: 5
+  _cellPrefab: {fileID: 1562096879420456680, guid: 38411b331ffe4fe48957523fcf4a7abd, type: 3}
+  _cellSize: {fileID: 11400000, guid: 5cacf6415d3d6ff46942221c86151315, type: 2}
+  _field: {fileID: 11400000, guid: 0d289da4fce3e5b44a703dbf9602eb6f, type: 2}
+  _gridLength: 3
   _padding: 0.3
 --- !u!1 &705507993
 GameObject:
