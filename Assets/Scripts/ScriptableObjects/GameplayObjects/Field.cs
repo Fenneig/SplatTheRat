@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SplatTheRat.Components;
 using SplatTheRat.Components.Grid;
 using UnityEngine;
@@ -20,22 +21,28 @@ namespace SplatTheRat.ScriptableObjects.GameplayObjects
             _cellsList.Add(cell);
         }
 
-        public Cell GetRandomEmptyCell()
+        public bool TryGetRandomEmptyCell(out Cell cell)
         {
-            Cell cell = null;
+            cell = null;
+            
+            if (!CheckListForEmptyCell()) return false;
+
+            PickRandomCell(ref cell);
+
+            return cell != null;
+        }
+
+        private void PickRandomCell(ref Cell cell)
+        {
             bool isCellPicked = false;
+            
             while (!isCellPicked)
             {
                 cell = _cellsList[Random.Range(0, _cellsList.Count)];
                 if (!cell.IsOccupied) isCellPicked = true;
             }
-
-            if (cell == null)
-            {
-                Debug.Log("Every cell is captured");
-            }
-
-            return cell;
         }
+
+        private bool CheckListForEmptyCell() => _cellsList.Any(cell => !cell.IsOccupied);
     }
 }

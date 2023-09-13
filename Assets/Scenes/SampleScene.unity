@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 47249071}
   - component: {fileID: 47249070}
   m_Layer: 0
-  m_Name: RatGenerator
+  m_Name: EnemyGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e373a5c415d4c7db04cf8e7d285ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ratPrefab: {fileID: 6278870042507198203, guid: 400d363368cc17a458e0e35a284e095f, type: 3}
+  _enemyPrefab: {fileID: 6278870042507198203, guid: 400d363368cc17a458e0e35a284e095f, type: 3}
   _field: {fileID: 11400000, guid: 0d289da4fce3e5b44a703dbf9602eb6f, type: 2}
-  _ratDefinitions:
+  _enemyDefinitions:
   - {fileID: 11400000, guid: 3945f8dc0c5829146a7b6b010703fdd6, type: 2}
   - {fileID: 11400000, guid: 55d49e4f632571e469f87563da5995ad, type: 2}
   - {fileID: 11400000, guid: 50c5e0609e698514bb79d49b528a18fb, type: 2}

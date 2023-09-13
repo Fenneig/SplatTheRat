@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a1c7bcf88494a4898f8f7329597943c, type: 3}
-  m_Name: DefaultRatMaxHealth
+  m_Name: SquirrelMaxHealth
   m_EditorClassIdentifier: 
-  _value: 2
+  _value: 1

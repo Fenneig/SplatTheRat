@@ -16,13 +16,18 @@ namespace SplatTheRat.Systems
         private void Update()
         {
             if (!Input.GetMouseButtonDown(0)) return;
+            MouseClickHandle();
+        }
+
+        private void MouseClickHandle()
+        {
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            if (!Physics.Raycast(ray, out var hit)) return;
             
+            if (!Physics.Raycast(ray, out var hit)) 
+                return;
+
             if (hit.collider.TryGetComponent(out IDamageable damageable))
-            {
                 damageable.Damage();
-            }
         }
     }
 }

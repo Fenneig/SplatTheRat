@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70e0f33483464112a010b5a6da6efd3d, type: 3}
-  m_Name: RatDeath
+  m_Name: EnemyDeath
   m_EditorClassIdentifier: 

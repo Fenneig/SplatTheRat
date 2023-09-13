@@ -1,26 +1,28 @@
-﻿using JetBrains.Annotations;
-using SplatTheRat.Components.Enemies;
+﻿using SplatTheRat.Components.Enemies;
+using SplatTheRat.ScriptableObjects.Settings;
 using UnityEngine;
 
 namespace SplatTheRat.Components.Grid
 {
     public class Cell : MonoBehaviour
     {
-        [SerializeField] private Transform _ratAppearPoint;
-        private Rat _rat;
+        [SerializeField] private Transform _enemyAppearPoint;
+        [SerializeField] private ObjectsScale _objectsScale;
+        private Enemy _enemy;
         public bool IsOccupied { get; private set; }
 
-        public void PutRatInCell(Rat rat)
+        public void PutRatInCell(Enemy enemy)
         {
-            _rat = rat;
-            _rat.transform.position = _ratAppearPoint.position;
+            _enemy = enemy;
+            _enemy.transform.position = _enemyAppearPoint.position;
+            _enemy.transform.localScale = Vector3.one * _objectsScale.Value;
             IsOccupied = true;
         }
-
-        [UsedImplicitly]
+        
         public void ClearCell()
         {
-            if (_rat == null) IsOccupied = false;
+            if (_enemy == null) 
+                IsOccupied = false;
         }
     }
 }
