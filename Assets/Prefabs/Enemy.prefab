@@ -53,7 +53,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.6}
 --- !u!114 &6278870042507198203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,3 +69,6 @@ MonoBehaviour:
   _idMaker: {fileID: 11400000, guid: e19352bb8a1597648a6fbe820755c67c, type: 2}
   _onEnemyDeadEvent: {fileID: 11400000, guid: d18b3d81c84543d49bd22299ab05b789, type: 2}
   _onEnemyTimerEnds: {fileID: 11400000, guid: d3369dc4ad071104db0f049348d2736e, type: 2}
+  _onPlayerHit: {fileID: 11400000, guid: 31f59782cee39c041a8d570b08aecd2a, type: 2}
+  _playerScore: {fileID: 11400000, guid: 7c4222e6c23762b4bb9a300d8244dea8, type: 2}
+  _playerHealth: {fileID: 11400000, guid: d6a6f8e6127ab8642a01b0cf6b7a6196, type: 2}

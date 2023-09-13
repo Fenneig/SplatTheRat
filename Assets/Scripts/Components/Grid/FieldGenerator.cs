@@ -11,14 +11,18 @@ namespace SplatTheRat.Components.Grid
         [Space, Header("Scriptable objects reference")]
         [SerializeField] private ObjectsScale _cellSize;
         [SerializeField] private Field _field;
-        [Space, Header("Field settings")]
-        [SerializeField, Range(2, 7)] private int _gridLength;
+        [SerializeField] private FieldSetup _fieldSetup;
+        [Space, Header("Field settings")] 
         [SerializeField] private float _padding;
         private Camera _mainCamera;
 
         private void Start()
         {
             _mainCamera = Camera.main;
+        }
+
+        public void StartGame()
+        {
             _field.ResetField();
             CalculateCubeSize();
             GenerateField();
@@ -30,7 +34,7 @@ namespace SplatTheRat.Components.Grid
             float cameraHeight = 2f * _mainCamera.orthographicSize;
             float cameraWidth = cameraHeight * aspectRatio;
         
-            _cellSize.Value = (cameraWidth - (_gridLength - 1) * _padding) / _gridLength;
+            _cellSize.Value = (cameraWidth - (_fieldSetup.GridLength - 1) * _padding) / _fieldSetup.GridLength ;
         }
 
         private void GenerateField()
@@ -39,11 +43,11 @@ namespace SplatTheRat.Components.Grid
         
             float cellWithPaddingSize = _cellSize.Value + _padding;
             float halfCellWithPaddingSize = cellWithPaddingSize * 0.5f;
-            float halfGridSize = _gridLength * halfCellWithPaddingSize;
+            float halfGridSize = _fieldSetup.GridLength  * halfCellWithPaddingSize;
 
-            for (int x = 0; x < _gridLength; x++)
+            for (int x = 0; x < _fieldSetup.GridLength ; x++)
             {
-                for (int y = 0; y < _gridLength; y++)
+                for (int y = 0; y < _fieldSetup.GridLength ; y++)
                 {
                     var offsetX = x * (_cellSize.Value + _padding) - halfGridSize + halfCellWithPaddingSize;
                     var offsetY = y * (_cellSize.Value + _padding) - halfGridSize + halfCellWithPaddingSize;

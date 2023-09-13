@@ -22,3 +22,11 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: e17b54b66d566d142beace934f23ce33, type: 2}
   _health: {fileID: 11400000, guid: 87ab7edf4a075e24197f7452d64c8a3d, type: 2}
+  _score:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 582b468881c5fd64786c5cb7f2888041, type: 2}
+  _damage:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 46a9212bd56a1ca4597ee0a4bfe72c6d, type: 2}

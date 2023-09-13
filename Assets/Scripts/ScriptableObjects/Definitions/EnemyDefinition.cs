@@ -11,11 +11,14 @@ namespace SplatTheRat.ScriptableObjects.Definitions
         [SerializeField] private FloatReference _lifeTime;
         [SerializeField] private IntReference _maxHealth;
         [SerializeField] private MultiplicityInt _health;
+        [SerializeField] private IntReference _score;
+        [SerializeField] private IntReference _damage;
 
-        public FloatReference LifeTime => _lifeTime;
+        public float LifeTime => _lifeTime.Value;
         public GameObject Model => _model;
-        
-        
+        public int Score => _score.Value;
+        public int Damage => _damage.Value;
+
         public void InitHealth(int id) => _health.RegisterEntity(id, _maxHealth.Value);
 
         public bool TryGetHealth(int id, out IntProperty value) => _health.TryGetEntity(id, out value);

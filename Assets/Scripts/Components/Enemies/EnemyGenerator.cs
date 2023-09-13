@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using SplatTheRat.Components.Grid;
+using SplatTheRat.Model.Data;
 using SplatTheRat.ScriptableObjects.Definitions;
 using SplatTheRat.ScriptableObjects.GameplayObjects;
+using SplatTheRat.Utils;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,6 +14,21 @@ namespace SplatTheRat.Components.Enemies
         [SerializeField] private Enemy _enemyPrefab;
         [SerializeField] private Field _field;
         [SerializeField] private List<EnemyDefinition> _enemyDefinitions;
+        [SerializeField] private FloatReference _timerReference;
+
+        private Timer _timer = new Timer();
+        private bool _isGameOn;
+
+        private void Awake()
+        {
+            _timer.Value = _timerReference.Value;
+        }
+
+        public void StartGame()
+        {
+            _isGameOn = true;
+            _timer.Reset();
+        }
 
         private void GenerateRat()
         {
@@ -24,7 +41,11 @@ namespace SplatTheRat.Components.Enemies
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E)) GenerateRat();
+            if (!_isGameOn) return;
+            if (!_timer.IsReady) return;
+            
+            GenerateRat();
+            _timer.Reset();
         }
     }
 }

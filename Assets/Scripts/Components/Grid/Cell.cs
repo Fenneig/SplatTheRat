@@ -21,8 +21,7 @@ namespace SplatTheRat.Components.Grid
         
         public void ClearCell()
         {
-            if (_enemy == null) 
-                IsOccupied = false;
+            if (_enemy == null || _enemy.IsDead) IsOccupied = false;
         }
     }
 }

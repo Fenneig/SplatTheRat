@@ -15,6 +15,11 @@ namespace SplatTheRat.Utils
             set => _value = value;
         }
 
+        public Timer()
+        {
+            _value = 0;
+        }
+
         public Timer(float value)
         {
             _value = value;

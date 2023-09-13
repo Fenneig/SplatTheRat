@@ -12,13 +12,20 @@ namespace SplatTheRat.Components.Enemies
     {
         [Header("Scriptable object references")]
         [SerializeField] private IdMaker _idMaker;
+        [Header("Event references")]
         [SerializeField] private GameEvent _onEnemyDeadEvent;
         [SerializeField] private GameEvent _onEnemyTimerEnds;
+        [SerializeField] private GameEvent _onPlayerHit;
+        [Header("Variable references")]
+        [SerializeField] private IntVariable _playerScore;
+        [SerializeField] private IntVariable _playerHealth;
         
         private EnemyDefinition _enemyDefinition;
         private IntProperty _health;
         private Timer _timer;
         private int _id;
+
+        public bool IsDead;
 
         public void InitEnemy(EnemyDefinition enemyDefinition)
         {
@@ -27,17 +34,26 @@ namespace SplatTheRat.Components.Enemies
             _enemyDefinition.InitHealth(_id);
             _enemyDefinition.TryGetHealth(_id, out _health);
             Instantiate(_enemyDefinition.Model, transform);
-            _timer = new Timer(enemyDefinition.LifeTime.Value);
+            _timer = new Timer(enemyDefinition.LifeTime);
             _timer.Reset();
+            IsDead = false;
         }
 
         private void Update()
         {
             if (_timer != null && _timer.IsReady)
             {
-                _onEnemyTimerEnds.Raise();
-                Death();
+                TimerExpire();
             }
+        }
+
+        private void TimerExpire()
+        {
+            IsDead = true;
+            _onEnemyTimerEnds.Raise();
+            _playerHealth.Value -= _enemyDefinition.Damage;
+            _onPlayerHit.Raise();
+            Destroy(gameObject);
         }
 
         public void Damage()
@@ -45,12 +61,14 @@ namespace SplatTheRat.Components.Enemies
             _health.Value--;
             if (_health.Value > 0) return;
             
-            _onEnemyDeadEvent.Raise();
-            Death();
+            EnemyDied();
         }
 
-        private void Death()
+        private void EnemyDied()
         {
+            IsDead = true;
+            _playerScore.Value += _enemyDefinition.Score;
+            _onEnemyDeadEvent.Raise();
             Destroy(gameObject);
         }
 
