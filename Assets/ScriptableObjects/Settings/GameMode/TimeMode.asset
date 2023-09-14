@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f81fc7de0cf428d8582213acaed30a8, type: 3}
   m_Name: TimeMode
   m_EditorClassIdentifier: 
-  _scoreToWin: 5000
+  _scoreToWin:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 37a608213281034469dc4f39c0af5fc7, type: 2}
   _hudCounterTypePrefab: {fileID: 9175629848392164342, guid: f4da2f327b78ef94eaee1851f6e7f431, type: 3}
   _timeToLose:
-    _value: 120
+    _value: 60

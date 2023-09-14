@@ -20,6 +20,9 @@ namespace SplatTheRat.Components.Enemies
         [SerializeField] private IntVariable _playerScore;
         [SerializeField] private IntVariable _playerHealth;
         [SerializeField] private BoolVariable _isGameOn;
+        [Header("Particles")]
+        [SerializeField] private ParticleSystem _hitParticle;
+        [SerializeField] private ParticleSystem _explosionParticle;
         
         private EnemyDefinition _enemyDefinition;
         private int _health;
@@ -50,11 +53,10 @@ namespace SplatTheRat.Components.Enemies
 
         private void TimerExpire()
         {
-            IsDead = true;
             _onEnemyTimerEnds.Raise();
             _playerHealth.Value -= _enemyDefinition.Damage;
             _onPlayerHit.Raise();
-            Destroy(gameObject);
+            DoDeathEffects(false);
         }
 
         public void Damage()
@@ -65,9 +67,16 @@ namespace SplatTheRat.Components.Enemies
 
         private void EnemyDied()
         {
-            IsDead = true;
             _playerScore.Value += _enemyDefinition.Score;
             _onEnemyDeadEvent.Raise();
+            DoDeathEffects(true);
+        }
+
+        private void DoDeathEffects(bool isEnemyDiedByPlayer)
+        {
+            IsDead = true;
+            ParticleSystem particleToSpawn = isEnemyDiedByPlayer ? _explosionParticle : _hitParticle;
+            Instantiate(particleToSpawn, transform.position, particleToSpawn.transform.rotation);
             Destroy(gameObject);
         }
 
