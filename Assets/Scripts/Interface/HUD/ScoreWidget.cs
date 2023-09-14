@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace SplatTheRat.HUD
+namespace SplatTheRat.Interface.HUD
 {
     public class ScoreWidget : MonoBehaviour
     {

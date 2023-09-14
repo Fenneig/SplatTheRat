@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 4277924272127204988}
   - component: {fileID: 1562096879420456680}
   - component: {fileID: 1089705275687197503}
-  - component: {fileID: 1454868058811747863}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -166,47 +165,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeba233ea3c84d58960584aab7e0ae0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: d18b3d81c84543d49bd22299ab05b789, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1562096879420456680}
-        m_TargetAssemblyTypeName: SplatTheRat.Components.Grid.Cell, Assembly-CSharp
-        m_MethodName: ClearCell
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1454868058811747863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6435740227697899986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeba233ea3c84d58960584aab7e0ae0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: d3369dc4ad071104db0f049348d2736e, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1562096879420456680}
-        m_TargetAssemblyTypeName: SplatTheRat.Components.Grid.Cell, Assembly-CSharp
-        m_MethodName: ClearCell
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _gameEventListeners:
+  - _event: {fileID: 11400000, guid: d18b3d81c84543d49bd22299ab05b789, type: 2}
+    _response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1562096879420456680}
+          m_TargetAssemblyTypeName: SplatTheRat.Components.Grid.Cell, Assembly-CSharp
+          m_MethodName: ClearCell
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _event: {fileID: 11400000, guid: d3369dc4ad071104db0f049348d2736e, type: 2}
+    _response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1562096879420456680}
+          m_TargetAssemblyTypeName: SplatTheRat.Components.Grid.Cell, Assembly-CSharp
+          m_MethodName: ClearCell
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

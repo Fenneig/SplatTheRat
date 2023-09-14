@@ -7,12 +7,12 @@ namespace SplatTheRat.ScriptableObjects.Utils
     [CreateAssetMenu(fileName = "Multiply Int variable", menuName = "SO/Utils/Multiply Int variable")]
     public class MultiplicityInt : ScriptableObject
     {
-        private Dictionary<int, IntProperty> _properties = new();
+        private Dictionary<int, int> _properties = new();
 
         public void RegisterEntity(int id, int amount)
         {
             if (_properties.ContainsKey(id)) return;
-            IntProperty newVariable = new IntProperty { Value = amount };
+            int newVariable = 0;
             _properties.Add(id, newVariable);
         }
 
@@ -22,9 +22,9 @@ namespace SplatTheRat.ScriptableObjects.Utils
                 _properties.Remove(id);
         }
 
-        public bool TryGetEntity(int id, out IntProperty amount)
+        public bool TryGetEntity(int id, out int amount)
         {
-            amount = new IntProperty();
+            amount = 0;
             
             if (_properties.ContainsKey(id))
             {

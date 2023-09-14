@@ -19,13 +19,14 @@ namespace SplatTheRat.Components.Enemies
         [Header("Variable references")]
         [SerializeField] private IntVariable _playerScore;
         [SerializeField] private IntVariable _playerHealth;
+        [SerializeField] private BoolVariable _isGameOn;
         
         private EnemyDefinition _enemyDefinition;
-        private IntProperty _health;
+        private int _health;
         private Timer _timer;
         private int _id;
 
-        public bool IsDead;
+        public bool IsDead { get; private set; }
 
         public void InitEnemy(EnemyDefinition enemyDefinition)
         {
@@ -41,7 +42,7 @@ namespace SplatTheRat.Components.Enemies
 
         private void Update()
         {
-            if (_timer != null && _timer.IsReady)
+            if (_timer != null && _timer.IsReady && _isGameOn.Value)
             {
                 TimerExpire();
             }
@@ -58,10 +59,8 @@ namespace SplatTheRat.Components.Enemies
 
         public void Damage()
         {
-            _health.Value--;
-            if (_health.Value > 0) return;
-            
-            EnemyDied();
+            _health--;
+            if (_health <= 0) EnemyDied();
         }
 
         private void EnemyDied()

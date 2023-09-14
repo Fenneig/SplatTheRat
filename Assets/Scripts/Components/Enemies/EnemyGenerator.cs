@@ -15,21 +15,20 @@ namespace SplatTheRat.Components.Enemies
         [SerializeField] private Field _field;
         [SerializeField] private List<EnemyDefinition> _enemyDefinitions;
         [SerializeField] private FloatReference _timerReference;
+        [SerializeField] private BoolVariable _isGameOn;
 
-        private Timer _timer = new Timer();
-        private bool _isGameOn;
+        private Timer _timer = new();
 
         private void Awake()
         {
             _timer.Value = _timerReference.Value;
         }
 
-        public void StartGame()
+        public void OnGameStarted()
         {
-            _isGameOn = true;
             _timer.Reset();
         }
-
+        
         private void GenerateRat()
         {
             if (!_field.TryGetRandomEmptyCell(out Cell cell)) return;
@@ -41,7 +40,7 @@ namespace SplatTheRat.Components.Enemies
 
         private void Update()
         {
-            if (!_isGameOn) return;
+            if (!_isGameOn.Value) return;
             if (!_timer.IsReady) return;
             
             GenerateRat();

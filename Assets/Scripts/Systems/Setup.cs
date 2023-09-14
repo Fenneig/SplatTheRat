@@ -1,5 +1,6 @@
-﻿using SplatTheRat.Model.Data;
-using SplatTheRat.ScriptableObjects.Events;
+﻿using JetBrains.Annotations;
+using SplatTheRat.Model.Data;
+using SplatTheRat.ScriptableObjects.Settings.GameModeSettings;
 using UnityEngine;
 
 namespace SplatTheRat.Systems
@@ -7,17 +8,15 @@ namespace SplatTheRat.Systems
     public class Setup : MonoBehaviour
     {
         [SerializeField] private IntVariable _playerScore;
-        [SerializeField] private IntVariable _playerHealth;
-        [SerializeField] private IntReference _playerMaxHealth;
-        [SerializeField] private GameEvent _playerHitEvent;
-        [SerializeField] private GameEvent _playerScoreEvent;
+        [SerializeField] private BoolVariable _isGameOn;
+        [SerializeField] private CurrentGameMode _currentGameMode;
         
-        private void Start()
+        [UsedImplicitly]
+        public void OnGameStart()
         {
             _playerScore.Value = 0;
-            _playerHealth.Value = _playerMaxHealth.Value;
-            _playerHitEvent.Raise();
-            _playerScoreEvent.Raise();
+            _currentGameMode.GameMode.Setup();
+            _isGameOn.Value = true;
         }
     }
 }

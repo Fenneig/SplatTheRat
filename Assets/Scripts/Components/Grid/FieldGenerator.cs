@@ -21,7 +21,7 @@ namespace SplatTheRat.Components.Grid
             _mainCamera = Camera.main;
         }
 
-        public void StartGame()
+        public void OnGameStarted()
         {
             _field.ResetField();
             CalculateCubeSize();

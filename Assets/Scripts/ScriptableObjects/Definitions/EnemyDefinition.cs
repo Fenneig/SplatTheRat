@@ -21,7 +21,7 @@ namespace SplatTheRat.ScriptableObjects.Definitions
 
         public void InitHealth(int id) => _health.RegisterEntity(id, _maxHealth.Value);
 
-        public bool TryGetHealth(int id, out IntProperty value) => _health.TryGetEntity(id, out value);
+        public bool TryGetHealth(int id, out int value) => _health.TryGetEntity(id, out value);
 
         public void DeinitHealth(int id) => _health.UnregisterEntity(id);
     }

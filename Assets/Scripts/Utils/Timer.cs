@@ -8,6 +8,7 @@ namespace SplatTheRat.Utils
     {
         [SerializeField] private float _value;
         private float _timeUp;
+        private float _startTime;
 
         public float Value
         {
@@ -27,7 +28,8 @@ namespace SplatTheRat.Utils
 
         public void Reset()
         {
-            _timeUp = Time.time + _value;
+            _startTime = Time.time;
+            _timeUp = _startTime + _value;
         }
 
         public void EarlyComplete()
@@ -36,5 +38,6 @@ namespace SplatTheRat.Utils
         }
 
         public bool IsReady => _timeUp <= Time.time;
+        public float ReadyProgress => (Time.time - _startTime) / (_timeUp - _startTime);
     }
 }

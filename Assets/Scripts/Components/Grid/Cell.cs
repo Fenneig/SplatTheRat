@@ -9,6 +9,7 @@ namespace SplatTheRat.Components.Grid
         [SerializeField] private Transform _enemyAppearPoint;
         [SerializeField] private ObjectsScale _objectsScale;
         private Enemy _enemy;
+        
         public bool IsOccupied { get; private set; }
 
         public void PutRatInCell(Enemy enemy)
