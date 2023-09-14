@@ -290,10 +290,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3945f8dc0c5829146a7b6b010703fdd6, type: 2}
   - {fileID: 11400000, guid: 55d49e4f632571e469f87563da5995ad, type: 2}
   - {fileID: 11400000, guid: 50c5e0609e698514bb79d49b528a18fb, type: 2}
-  _timerReference:
+  _timeToSpawnReference:
     _useConstant: 0
     _constantValue: 0
-    _variable: {fileID: 11400000, guid: 9e45f38fb04d70a4d9fa2df2bbba20cf, type: 2}
+    _variable: {fileID: 11400000, guid: 586a3b6db1594ac488089de780d0a83f, type: 2}
   _isGameOn: {fileID: 11400000, guid: 64becb224ead6254e813e448283dd3b4, type: 2}
 --- !u!4 &47249071
 Transform:
