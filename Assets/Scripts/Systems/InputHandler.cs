@@ -6,7 +6,6 @@ namespace SplatTheRat.Systems
     public class InputHandler : MonoBehaviour
     {
         private Camera _mainCamera;
-        
 
         private void Awake()
         {

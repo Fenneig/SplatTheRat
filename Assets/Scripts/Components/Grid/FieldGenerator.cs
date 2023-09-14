@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using SplatTheRat.ScriptableObjects.GameplayObjects;
 using SplatTheRat.ScriptableObjects.Settings;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace SplatTheRat.Components.Grid
             _mainCamera = Camera.main;
         }
 
+        [UsedImplicitly]
         public void OnGameStarted()
         {
             _field.ResetField();

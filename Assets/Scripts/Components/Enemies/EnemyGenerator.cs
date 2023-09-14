@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 using SplatTheRat.Components.Grid;
 using SplatTheRat.Model.Data;
 using SplatTheRat.ScriptableObjects.Definitions;
@@ -14,16 +15,17 @@ namespace SplatTheRat.Components.Enemies
         [SerializeField] private Enemy _enemyPrefab;
         [SerializeField] private Field _field;
         [SerializeField] private List<EnemyDefinition> _enemyDefinitions;
-        [SerializeField] private FloatReference _timerReference;
+        [SerializeField] private FloatReference _timeToSpawnReference;
         [SerializeField] private BoolVariable _isGameOn;
 
         private Timer _timer = new();
 
         private void Awake()
         {
-            _timer.Value = _timerReference.Value;
+            _timer.Value = _timeToSpawnReference.Value;
         }
 
+        [UsedImplicitly]
         public void OnGameStarted()
         {
             _timer.Reset();

@@ -1,4 +1,5 @@
-﻿using SplatTheRat.Components.Enemies;
+﻿using JetBrains.Annotations;
+using SplatTheRat.Components.Enemies;
 using SplatTheRat.ScriptableObjects.Settings;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace SplatTheRat.Components.Grid
             IsOccupied = true;
         }
         
+        [UsedImplicitly]
         public void ClearCell()
         {
             if (_enemy == null || _enemy.IsDead) IsOccupied = false;

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SplatTheRat.Interface.HUD
+namespace SplatTheRat.UserInterface.HUD
 {
     public class TimeWidget : MonoBehaviour
     {
@@ -17,11 +17,6 @@ namespace SplatTheRat.Interface.HUD
         }
 
         private void Update()
-        {
-            UpdateTime();
-        }
-
-        private void UpdateTime()
         {
             _timeImage.fillAmount = 1 - _timeSettings.TimeToLose.ReadyProgress;
         }

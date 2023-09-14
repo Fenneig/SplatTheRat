@@ -1,9 +1,10 @@
-﻿using SplatTheRat.Model.Data;
+﻿using JetBrains.Annotations;
+using SplatTheRat.Model.Data;
 using SplatTheRat.ScriptableObjects.Settings.GameModeSettings;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SplatTheRat.Interface.HUD
+namespace SplatTheRat.UserInterface.HUD
 {
     public class HealthWidget : MonoBehaviour
     {
@@ -18,6 +19,7 @@ namespace SplatTheRat.Interface.HUD
             _healthSettings = _gameSettings.GameMode as HealthMode;
         }
 
+        [UsedImplicitly]
         public void UpdateHealth()
         {
             _healthImage.fillAmount = (float) _playerHealth.Value / _healthSettings.PlayerMaxHealth.Value;

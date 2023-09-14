@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SplatTheRat.Interface.Menu
+namespace SplatTheRat.UserInterface.Menu
 {
     public class GameOverWidget : MonoBehaviour
     {

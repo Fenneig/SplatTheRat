@@ -1,7 +1,7 @@
 ﻿using SplatTheRat.ScriptableObjects.Settings.GameModeSettings;
 using UnityEngine;
 
-namespace SplatTheRat.Interface.Menu
+namespace SplatTheRat.UserInterface.Menu
 {
     public class ModeWidget : MonoBehaviour
     {
