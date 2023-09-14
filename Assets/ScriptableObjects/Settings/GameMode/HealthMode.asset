@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386f5c0ec71e4524946a119479e09bd2, type: 3}
   m_Name: HealthMode
   m_EditorClassIdentifier: 
-  _scoreToWin: 5000
+  _scoreToWin:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 37a608213281034469dc4f39c0af5fc7, type: 2}
   _hudCounterTypePrefab: {fileID: 547960134935907633, guid: cd94d4e1b59f7984492100f69e367ecb, type: 3}
   _playerHealth: {fileID: 11400000, guid: d6a6f8e6127ab8642a01b0cf6b7a6196, type: 2}
   _playerMaxHealth:

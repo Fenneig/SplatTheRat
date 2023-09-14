@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using SplatTheRat.Model.Data;
 using UnityEngine;
 
 namespace SplatTheRat.ScriptableObjects.Utils
@@ -12,7 +11,7 @@ namespace SplatTheRat.ScriptableObjects.Utils
         public void RegisterEntity(int id, int amount)
         {
             if (_properties.ContainsKey(id)) return;
-            int newVariable = 0;
+            int newVariable = amount;
             _properties.Add(id, newVariable);
         }
 
