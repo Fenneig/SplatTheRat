@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2678754751430634435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998365208503625141}
+  - component: {fileID: 2768451847506839818}
+  - component: {fileID: 6278870042507198203}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998365208503625141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678754751430634435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2768451847506839818
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678754751430634435}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: -0.6}
+--- !u!114 &6278870042507198203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678754751430634435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc617d954cc7408aabcc128bb843af9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idMaker: {fileID: 11400000, guid: e19352bb8a1597648a6fbe820755c67c, type: 2}
+  _onEnemyDeadEvent: {fileID: 11400000, guid: d18b3d81c84543d49bd22299ab05b789, type: 2}
+  _onEnemyTimerEnds: {fileID: 11400000, guid: d3369dc4ad071104db0f049348d2736e, type: 2}
+  _onPlayerHit: {fileID: 11400000, guid: 31f59782cee39c041a8d570b08aecd2a, type: 2}
+  _playerScore: {fileID: 11400000, guid: 7c4222e6c23762b4bb9a300d8244dea8, type: 2}
+  _playerHealth: {fileID: 11400000, guid: d6a6f8e6127ab8642a01b0cf6b7a6196, type: 2}
+  _isGameOn: {fileID: 11400000, guid: 64becb224ead6254e813e448283dd3b4, type: 2}

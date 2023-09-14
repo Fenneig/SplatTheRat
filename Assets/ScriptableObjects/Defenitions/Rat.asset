@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a97e8f860b47c4a35df09792e5c0e6, type: 3}
+  m_Name: Rat
+  m_EditorClassIdentifier: 
+  _model: {fileID: 6224740092085280154, guid: 7ce22b12bfa6a0a4088989a5762a941d, type: 3}
+  _lifeTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 956717554380f7344bd44a1f08e0d359, type: 2}
+  _maxHealth:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 4edbf6159b1b5c14f8283527fa2b1592, type: 2}
+  _health: {fileID: 11400000, guid: 87ab7edf4a075e24197f7452d64c8a3d, type: 2}
+  _score:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: c1300b5c09fea854c89e9bffa859a98f, type: 2}
+  _damage:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: d4588ade91a5a744d85798718e0ac883, type: 2}

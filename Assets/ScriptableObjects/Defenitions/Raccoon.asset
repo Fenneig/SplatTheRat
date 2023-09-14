@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a97e8f860b47c4a35df09792e5c0e6, type: 3}
+  m_Name: Raccoon
+  m_EditorClassIdentifier: 
+  _model: {fileID: 6714826279782493746, guid: 4e802bffb597c0942a7319a6ee44e132, type: 3}
+  _lifeTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 0117cf4f3a8d9c545ae7e671926c4d58, type: 2}
+  _maxHealth:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 0799f5e151aa8634ba1e7b5504d1eca9, type: 2}
+  _health: {fileID: 11400000, guid: 87ab7edf4a075e24197f7452d64c8a3d, type: 2}
+  _score:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: c49259ecf71c3a848b7f80af3215d94b, type: 2}
+  _damage:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 0730321ebb963694a8f62ac83d9d21c5, type: 2}
