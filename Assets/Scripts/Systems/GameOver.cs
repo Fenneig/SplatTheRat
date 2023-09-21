@@ -23,7 +23,7 @@ namespace SplatTheRat.Systems
 
         private void Update()
         {
-            if (_currentGameMode.GameMode is not TimeMode) return;
+            if (_currentGameMode.GameMode is not TimeMode || !_isGameOn.Value) return;
 
             if (_currentGameMode.GameMode.IsGameLost()) OnGameEnd();
         }
